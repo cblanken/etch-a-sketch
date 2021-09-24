@@ -11,13 +11,16 @@
 
   <body>
     <header>Etch-a-Sketch</header>
-    <form id="resize-form" class="default-bg">
-      <label class="default-bg" for="x-input">Width</label>
-      <input type="text" name="x-input">
-      <label class="default-bg" for="y-input">Height</label>
-      <input type="text" name="y-input">
-      <button>Resize</button>
-    </form>
+    <div id="ui-container" class="default-bg">
+      <form id="resize-form" class="default-bg">
+        <label class="default-bg" for="x-input">Width</label>
+        <input type="text" name="x-input">
+        <label class="default-bg" for="y-input">Height</label>
+        <input type="text" name="y-input">
+        <button>Resize</button>
+      </form>
+      <button id="reset-button" class="btn">Reset</button>
+    </div>
 
     <main id=grid-container></main>
 

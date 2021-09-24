@@ -67,7 +67,6 @@ footer a {
 
 #resize-form {
   text-align: center;
-  margin-top: 32px;
 }
 
 #resize-form label {
@@ -80,6 +79,24 @@ footer a {
   margin: 2rem auto;
   padding: 2rem auto;
   border: 1px solid white;
+}
+
+#ui-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px;
+}
+
+.btn {
+  border: 2px outset black;
+  border-radius: 5px;
+  padding: 5px 15px;
+  font: 1.5em normal monospace;
+}
+
+.btn:active {
+  border-style: inset;
 }
 
 .square {

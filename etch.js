@@ -1,10 +1,14 @@
 // Etch-a-Sketch 
+
+
+// Grid setup
 const gridWidth = 32;
 const gridHeight = 32;
 
 const gridContainer = document.querySelector("#grid-container");
+let drawnOverCells = [] 
 
-function generateGrid(root, width, height) {
+function generateGrid(container, width, height) {
     // Create 2d array for grid
     let grid = Array.from(Array(width), () => new Array(height));
     // Create elements for each grid cell
@@ -15,7 +19,7 @@ function generateGrid(root, width, height) {
             grid.push(cell);
 
             cell.addEventListener("mouseover", mouseover);
-            root.appendChild(cell);
+            container.appendChild(cell);
         }
     }
     
@@ -23,8 +27,9 @@ function generateGrid(root, width, height) {
 }
 
 function mouseover(e) {
-    if ("drawn-over" in e.target.classList === false) {
-       e.target.classList.add("drawn-over") 
+    if (e.target.classList.contains("drawn-over") === false) {
+        e.target.classList.add("drawn-over");
+        drawnOverCells.push(e.target);
     }
 }
 
@@ -32,4 +37,21 @@ function updateGridCell(grid, x, y, text) {
     grid[x][y].textContent = text; 
 }
 
+function resetGridCell(cell) {
+    if (cell.classList.contains("drawn-over")) {
+        cell.classList.remove("drawn-over");
+    }
+}
+
+function resetGrid() {
+    drawnOverCells.forEach(cell => resetGridCell(cell)); 
+}
+
+
 let grid = generateGrid(gridContainer, gridWidth, gridHeight)
+
+
+// UI setup
+const resetButton = document.querySelector("#reset-button");
+resetButton.addEventListener("click", resetGrid);
+
