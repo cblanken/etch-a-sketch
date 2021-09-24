@@ -67,6 +67,10 @@ footer a {
 
 #resize-form {
   text-align: center;
+  margin-top: 32px;
+}
+
+#resize-form label {
 }
 
 #grid-container {
@@ -83,10 +87,8 @@ footer a {
   background-color: black;
   width: calc(var(--grid-perc) * 1vh);
   height: calc(var(--grid-perc) * 1vh);
-  /*border: 1px solid white;*/
 }
 
-.square:hover {
+.drawn-over {
   background-color: var(--highlight);
 }
-

@@ -13,6 +13,8 @@ function generateGrid(root, width, height) {
             const cell = document.createElement("div");
             cell.classList.add("square");
             grid.push(cell);
+
+            cell.addEventListener("mouseover", mouseover);
             root.appendChild(cell);
         }
     }
@@ -20,9 +22,14 @@ function generateGrid(root, width, height) {
     return grid;
 }
 
+function mouseover(e) {
+    if ("drawn-over" in e.target.classList === false) {
+       e.target.classList.add("drawn-over") 
+    }
+}
+
 function updateGridCell(grid, x, y, text) {
     grid[x][y].textContent = text; 
 }
 
 let grid = generateGrid(gridContainer, gridWidth, gridHeight)
-
