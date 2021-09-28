@@ -13,17 +13,17 @@
     <header>Etch-a-Sketch</header>
     <div id="ui-container" class="default-bg">
       <form id="resize-form" class="default-bg">
-        <label class="default-bg" for="x-input">Width</label>
-        <input type="text" name="x-input">
-        <label class="default-bg" for="y-input">Height</label>
-        <input type="text" name="y-input">
-        <button>Resize</button>
+        <label class="default-bg" for="x-input"></label>
+        <input id="width-input" type="text" name="x-input" placeholder="Width">
+        <label class="default-bg" for="y-input"></label>
+        <input id="height-input" type="text" name="y-input" placeholder="Height">
+        <button id="resize-button" class="btn">Resize</button>
       </form>
-      <button id="reset-button" class="btn">Reset</button>
+      <button id="clear-button" class="btn">Clear</button>
     </div>
 
     <main id=grid-container></main>
 
-    <footer>&copy <a href="https://github.com/cblanken">cblanken</a></footer>
+    <footer>Copyright &copy <a href="https://github.com/cblanken">cblanken</a></footer>
   </body>
 </html>

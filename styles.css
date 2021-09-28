@@ -23,9 +23,10 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
-:root {
-  --grid-size: 32;
-  --grid-perc: 80 / var(--grid-size);
+html {
+  --grid-width: 8;
+  --grid-height: 8;
+  --grid-perc: 80 / var(--grid-width);
   --dark1-bg: #282828;
   --dark2-bg: #e6d6a6;
   --light1-bg: #FFC600;
@@ -66,18 +67,25 @@ footer a {
 }
 
 #resize-form {
+  display: flex;
+  align-items: center;
   text-align: center;
+  gap: 10px;
 }
 
-#resize-form label {
+#resize-form input[type="text"] {
+  width: 100px;
+  height: 2rem;
+  font: 1.25rem normal monospace;
+  text-align: center;
 }
 
 #grid-container {
   background-color: var(--light1-bg);
   display: grid;
-  grid-template-columns: repeat(var(--grid-size), 1fr);
+  grid-template-columns: repeat(var(--grid-width), 1fr);
+  grid-template-rows: repeat(var(--grid-height), 1fr);
   margin: 2rem auto;
-  padding: 2rem auto;
   border: 1px solid white;
 }
 
@@ -92,7 +100,7 @@ footer a {
   border: 2px outset black;
   border-radius: 5px;
   padding: 5px 15px;
-  font: 1.5em normal monospace;
+  font: 1.25em normal monospace;
 }
 
 .btn:active {
