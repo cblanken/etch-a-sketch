@@ -94,14 +94,6 @@ function addGridRow() {
     }
 }
 
-function removeGridCol() {
-
-}
-
-function removeGridRow() {
-     
-}
-
 function resizeGrid(width, height) {
     try {
         const html = document.querySelector("html");
@@ -122,9 +114,16 @@ function resizeGrid(width, height) {
 
 function handleResizeClick(e) {
     e.preventDefault(); // default behavior includes reloading the page
-    const width = Number(document.querySelector("#width-input").value);
-    const height = Number(document.querySelector("#height-input").value);
+
+    widthInput = document.querySelector("#width-input");
+    heightInput = document.querySelector("#height-input")
+    const width = Number(widthInput.value);
+    const height = Number(heightInput.value);
+
     resizeGrid(width, height);
+    
+    widthInput.value = "";
+    heightInput.value = "";
 }
 
 const resizeButton = document.querySelector("#resize-button");
