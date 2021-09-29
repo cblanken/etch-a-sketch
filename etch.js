@@ -95,6 +95,8 @@ function addGridRow() {
 }
 
 function resizeGrid(width, height) {
+    width = width > 100 ? 100 : width;
+    height = height > 100 ? 100 : height;
     try {
         const html = document.querySelector("html");
         console.log("Resizing grid...");
