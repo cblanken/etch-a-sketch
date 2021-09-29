@@ -75,25 +75,6 @@ function eraseGrid() {
     drawnOverCells.length = 0;
 }
 
-const clearButton = document.querySelector("#clear-button");
-clearButton.addEventListener("click", eraseGrid);
-
-function addGridCol() {
-    for (let x = 0; x < grid.length; x++) {
-        grid[x].push();
-        //addCell(gridContainer, grid, grid.length - 1, y);
-        // TODO: link css width and height variables
-    }
-}
-
-function addGridRow() {
-    grid.push(new Array(grid[0].length));
-    for (let y = 0; y < grid[0].length; y++) {
-        addCell(gridContainer, grid, grid.length - 1, y);
-        // TODO: link css width and height variables
-    }
-}
-
 function resizeGrid(width, height) {
     width = width > 100 ? 100 : width;
     height = height > 100 ? 100 : height;
@@ -128,6 +109,18 @@ function handleResizeClick(e) {
     heightInput.value = "";
 }
 
+function updateColor() {
+    document.querySelector("html").style.setProperty('--highlight', colorInput.value);
+
+}
+
+const clearButton = document.querySelector("#clear-button");
+clearButton.addEventListener("click", eraseGrid);
+
 const resizeButton = document.querySelector("#resize-button");
 resizeButton.addEventListener("click", handleResizeClick);
+
+const colorInput = document.querySelector("#ui-container input[type='color']");
+colorInput.addEventListener("change", updateColor);
+
 

@@ -82,7 +82,7 @@ footer a {
 
 #grid-container {
   background-color: var(--light1-bg);
-  display: grid;
+  display: inline-grid;
   grid-template-columns: repeat(var(--grid-width), 1fr);
   grid-template-rows: repeat(var(--grid-height), 1fr);
   margin: 2rem auto;
@@ -94,6 +94,10 @@ footer a {
   justify-content: space-between;
   align-items: center;
   margin: 16px;
+}
+
+#ui-container input[type="color"] {
+  height: 2rem;
 }
 
 .btn {
