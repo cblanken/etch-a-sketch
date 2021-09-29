@@ -118,6 +118,10 @@ footer a {
   height: calc(var(--grid-perc) * 1vh);
 }
 
+.square:hover {
+  background-color: var(--highlight);
+}
+
 .drawn-over {
   background-color: var(--highlight);
 }

@@ -28,6 +28,8 @@ function addCell(container, grid, x, y) {
     cell.classList.add("square");
     grid[x][y] = cell;
 
+    //cell.addEventListener("mouseover", mouseover);
+    cell.addEventListener("click", click);
     cell.addEventListener("mouseover", mouseover);
     container.appendChild(cell);
 
@@ -51,9 +53,18 @@ function updateSketchPad(container, grid) {
         // TODO: update divs with grid param 
     }
 }
+ 
+function click(e) {
+    // Draw over cell if only left-mouse button is pressed and cell isn't colored 
+    if (e.target.classList.contains("drawn-over") === false) {
+        e.target.classList.add("drawn-over");
+        drawnOverCells.push(e.target);
+    }
+}
 
 function mouseover(e) {
-    if (e.target.classList.contains("drawn-over") === false) {
+    // Draw over cell if only left-mouse button is pressed and cell isn't colored 
+    if ((e.buttons & 1) === 1 && e.target.classList.contains("drawn-over") === false) {
         e.target.classList.add("drawn-over");
         drawnOverCells.push(e.target);
     }
